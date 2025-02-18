@@ -43,3 +43,9 @@ var searchBST = function(root, val) {
     }
     return root;
 }
+
+var searchBST = (root, val) => {
+    while (root && root.val !== val) 
+        root = val < root.val ? root.left : root.right;
+    return root;
+};

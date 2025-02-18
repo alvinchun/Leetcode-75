@@ -91,3 +91,13 @@ class Solution {
         this.dfs(root.right, result);
     }
 }
+
+var leafSimilar = function(root1, root2) {
+    const getLeaves = (node) => {
+        if (!node) return [];
+        if (!node.left && !node.right) return [node.val];
+        return [...getLeaves(node.left), ...getLeaves(node.right)];
+    };
+    
+    return getLeaves(root1).toString() === getLeaves(root2).toString();
+};

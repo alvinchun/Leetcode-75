@@ -21,3 +21,9 @@ var removeStars = function(s) {
     // Convert the stack to a string and return it as the output
     return stack.join('');
 };
+
+var removeStars = function(s) {
+    let stack = [];
+    for (let c of s) c === '*' ? stack.pop() : stack.push(c);
+    return stack.join('');
+};

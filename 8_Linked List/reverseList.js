@@ -31,3 +31,11 @@ var reverseList = function(head) {
     head.next = null;
     return res;     // Return the reverse linked list...
 };
+
+class Solution {
+    reverseList(head) {
+        let prev = null, curr = head;
+        while (curr) [curr.next, prev, curr] = [prev, curr, curr.next];
+        return prev;
+    }
+}

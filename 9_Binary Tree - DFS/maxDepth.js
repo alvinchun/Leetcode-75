@@ -38,3 +38,5 @@ var maxDepth = function(root) {
     }
     return Math.max(maxDepth(root.left),maxDepth(root.right)) + 1;
 };
+
+var maxDepth = (root) => root ? 1 + Math.max(maxDepth(root.left), maxDepth(root.right)) : 0;

@@ -31,3 +31,22 @@ var rightSideView = function(root) {
     
     return result;
 };
+
+var rightSideView = function(root) {
+    if (!root) return [];
+    
+    const result = [], queue = [root];
+
+    while (queue.length) {
+        let size = queue.length;
+        result.push(queue[size - 1].val); // Add the rightmost node at each level
+
+        while (size--) {
+            let node = queue.shift();
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+    }
+    
+    return result;
+};

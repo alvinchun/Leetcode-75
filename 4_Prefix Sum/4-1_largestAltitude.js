@@ -37,3 +37,14 @@ const largestAltitude3 = gain => {
 
 	return max;
 };
+
+const largestAltitude = gain => {
+    let altitude = 0, maxAltitude = 0;
+    
+    for (let change of gain) {
+        altitude += change;
+        maxAltitude = Math.max(maxAltitude, altitude);
+    }
+    
+    return maxAltitude;
+};

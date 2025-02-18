@@ -25,3 +25,16 @@ var uniqueOccurrences = function(arr) {
     return true;
 };
 
+var uniqueOccurrences = function(arr) {
+    let freqMap = new Map();
+    
+    // Count occurrences of each element
+    for (let num of arr) {
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    // Check if frequencies are unique using a Set
+    let freqSet = new Set(freqMap.values());
+    
+    return freqMap.size === freqSet.size;
+};

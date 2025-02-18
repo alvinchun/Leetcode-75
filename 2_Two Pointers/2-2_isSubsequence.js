@@ -50,3 +50,11 @@ var isSubsequence = function(s, t) {
 
     return sp === s.length;    
 };
+
+var isSubsequence = function(s, t) {
+  let sp = 0;
+  for (let tp = 0; tp < t.length && sp < s.length; tp++) {
+      if (s[sp] === t[tp]) sp++;
+  }
+  return sp === s.length;
+};
